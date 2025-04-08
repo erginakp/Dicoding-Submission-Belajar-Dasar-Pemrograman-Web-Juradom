@@ -1,0 +1,688 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fauna One", serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #998354;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar .logo img {
+  width: 60px;
+}
+
+.toggle-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: #fff;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  transition: transform 0.3s ease;
+}
+
+.menu li {
+  margin: 0 10px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+  background-color: #675538;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.menu li a.active {
+  background-color: #675538;
+  color: #fff;
+  border-radius: 5px;
+}
+
+#toggle {
+  display: none;
+}
+
+#toggle:checked + .toggle-btn + .logo + .menu {
+  display: block;
+}
+
+main {
+  padding: 1rem;
+}
+
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-content,
+.about-image {
+  flex: 1;
+  padding: 1rem;
+}
+
+.about-title {
+  width: 10%;
+  border-bottom: 2px solid #998354;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  margin-top: 5px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+}
+
+.about-page {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.content-wrapper {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-content-page {
+  background-color: #fdfdfd;
+  padding: 1rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content-title {
+  border-bottom: 2px solid #998354;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+}
+
+.about-content-image img {
+  width: 100%;
+  height: auto;
+}
+
+.profil {
+  float: right;
+  padding: 1rem;
+  background-color: #fdfdfd;
+  width: 25%;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profil img {
+  width: 100%;
+}
+
+.profil figcaption,
+.profil h3,
+.profil table {
+  text-align: center;
+}
+
+.dinosaurus,
+.galeri,
+.artikel,
+.fossil {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.dinosaurus-title {
+  border-bottom: 2px solid #998354;
+  width: 12%;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.galeri-title {
+  border-bottom: 2px solid #998354;
+  width: 12%;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fossil-title {
+  border-bottom: 2px solid #998354;
+  width: 20%;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.galeri-item img {
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.galeri-item img:hover {
+  transform: scale(1.1);
+}
+
+.artikel-title {
+  border-bottom: 2px solid #998354;
+  width: 12%;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dino-grid,
+.galeri-grid,
+.artikel-grid,
+.fossil-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dino-card,
+.artikel-card,
+.fossil-card {
+  flex: 1 1 calc(33.33% - 1rem);
+  background-color: #fdfdfd;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.galeri-item {
+  flex: 1 1 calc(33.33% - 1rem);
+  background-color: none;
+  box-shadow: none;
+  padding: 1rem;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.jumbotron {
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: -1;
+}
+
+.jumbotron-content {
+  z-index: 10;
+}
+
+.jumbotron-content h1 {
+  font-size: 2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  flex: 1;
+  max-width: 150px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.filter-buttons button.active {
+  background-color: #998354;
+  color: white;
+}
+
+.dino-page-cards {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.dino-item {
+  background-color: #fdfdfd;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+  max-width: 250px;
+  text-align: center;
+  padding: 10px;
+}
+
+.dino-item .dino-image {
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.gallery-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery-card {
+  width: calc(25% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card img:hover {
+  transform: scale(1.1);
+}
+
+.blog-page,
+.fosil-page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.blog-card {
+  background-color: #fdfdfd;
+  border-radius: 25px;
+  overflow: hidden;
+  width: 30%;
+  min-width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-content,
+.fosil-content {
+  padding: 15px;
+}
+
+.blog-content h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.fosil-content h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.fosil-card {
+  background-color: #fdfdfd;
+  border-radius: 25px;
+  overflow: hidden;
+  width: 30%;
+  min-width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fosil-card img {
+  width: 100%;
+  height: auto;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: #998354;
+  margin-top: 10px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.pagination button {
+  border: 1px solid #998354;
+  color: #fff;
+  background: #998354;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background: #675538;
+  color: #fff;
+}
+
+.btn {
+  text-decoration: none;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #998354;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background-color: #675538;
+}
+
+footer {
+  background-color: #998354;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: row-reverse;
+  }
+
+  .toggle-btn {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: #998354;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
+  .menu li {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  #toggle:checked + .toggle-btn + .logo + .menu {
+    display: flex;
+  }
+
+  #toggle:checked + .toggle-btn + .logo + .menu li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .dino-card,
+  .galeri-item,
+  .artikel-card,
+  .fossil-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .about-page {
+    flex-direction: column;
+  }
+
+  .filter-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .dino-item {
+    width: calc(50% - 20px);
+  }
+
+  .gallery-card {
+    width: calc(33.33% - 10px);
+  }
+
+  .blog-page,
+  .fosil-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card,
+  .fosil-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu li {
+    font-size: 14px;
+  }
+
+  .about-content {
+    padding: 0;
+    border: none;
+  }
+
+  .profil {
+    float: none;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .dinosaurus-title {
+    width: 90%;
+  }
+
+  .galeri-title {
+    width: 90%;
+  }
+
+  .artikel-title {
+    width: 90%;
+  }
+
+  .fossil-title {
+    width: 90%;
+  }
+  .dino-card,
+  .galeri-item,
+  .artikel-card,
+  .fossil-card {
+    flex: 1 1 100%;
+  }
+
+  .jumbotron-content h1 {
+    font-size: 2rem;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-buttons button {
+    width: 100%;
+    max-width: none;
+  }
+
+  .dino-item {
+    width: 100%;
+  }
+
+  .gallery-card {
+    width: calc(50% - 10px);
+  }
+
+  .blog-card,
+  .fosil-card {
+    width: 90%;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group input {
+    width: 100%;
+  }
+}
