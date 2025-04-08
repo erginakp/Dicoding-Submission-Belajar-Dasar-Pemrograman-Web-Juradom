@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinosaurus</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/dinosaur kingdom.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" class="toggle-btn"> ☰ </label>
+        <div class="logo">
+          <img src="assets/images/dinosaur kingdom.png" alt="Logo" />
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="dinosaurus.html" class="active">Dinosaurus</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="fosil.html">Fosil</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+      <div class="jumbotron">
+        <div class="jumbotron-content">
+          <h1>Dinosaurus</h1>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="dino-page">
+        <div class="filter-buttons">
+          <button data-filter="all" class="active">Semua</button>
+          <button data-filter="triassic">Triassic</button>
+          <button data-filter="jurassic">Jurassic</button>
+          <button data-filter="cretaceous">Cretaceous</button>
+        </div>
+        <div class="dino-page-cards">
+          <div class="dino-item" data-category="triassic">
+            <div class="dino-image">
+              <img
+                src="assets/images/Coelophysis.jpg"
+                alt="Coelophysis"
+                width="100"
+              />
+            </div>
+            <h3>Coelophysis</h3>
+            <br />
+            <a href="#" class="btn">Baca</a>
+          </div>
+          <div class="dino-item" data-category="jurassic">
+            <div class="dino-image">
+              <img
+                src="assets/images/Brachiosaurus.jpg"
+                alt="Brachiosaurus"
+                width="100"
+              />
+            </div>
+            <h3>Brachiosaurus</h3>
+            <br />
+            <a href="#" class="btn">Baca</a>
+          </div>
+          <div class="dino-item" data-category="cretaceous">
+            <div class="dino-image">
+              <img
+                src="assets/images/Tyrannosaurus rex.jpg"
+                alt="Tyrannosaurus rex"
+                width="100"
+              />
+            </div>
+            <h3>Tyrannosaurus rex</h3>
+            <br />
+            <a href="#" class="btn">Baca</a>
+          </div>
+          <div class="dino-item" data-category="triassic">
+            <div class="dino-image">
+              <img
+                src="assets/images/Plateosaurus.jpg"
+                alt="Plateosaurus"
+                width="100"
+              />
+            </div>
+            <h3>Plateosaurus</h3>
+            <br />
+            <a href="#" class="btn">Baca</a>
+          </div>
+          <div class="dino-item" data-category="jurassic">
+            <div class="dino-image">
+              <img
+                src="assets/images/Allosaurus.jpg"
+                alt="Allosaurus"
+                width="100"
+              />
+            </div>
+            <h3>Allosaurus</h3>
+            <br />
+            <a href="#" class="btn">Baca</a>
+          </div>
+          <div class="dino-item" data-category="cretaceous">
+            <div class="dino-image">
+              <img
+                src="assets/images/Velociraptor.jpg"
+                alt="Velociraptor"
+                width="100"
+              />
+            </div>
+            <h3>Velociraptor</h3>
+            <br />
+            <a href="#" class="btn">Baca</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Dinosaur Kingdom. All Rights Reserved.</p>
+      <p>Designed with ❤️ by Ergina Kamilia Putri</p>
+    </footer>
+  </body>
+  <script src="assets/js/script.js"></script>
+</html>
